@@ -4,10 +4,16 @@ public class PayServiceFactoryTest {
 
     public static void main(String[] args) {
         PayServiceFactory factory = new PayServiceFactory();
-        IPayService zhifubbao = factory.getPayService(ZhifubaoPayService.class);
-        zhifubbao.pay();
+        IPayService alipay = factory.getPayService(AliPayService.class);
+        alipay.pay();
 
-        IPayService weixin = factory.getPayService(WeixinPayService.class);
-        weixin.pay();
+        IPayService wechatpay = factory.getPayService(WeChatPayService.class);
+        wechatpay.pay();
+
+        IPayService unionpay = factory.getPayService(UnionPayService.class);
+        unionpay.pay();
+
+        IPayService foreignpay = factory.getPayService(ForeignPayService.class);
+        foreignpay.pay();
     }
 }
